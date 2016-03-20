@@ -1,0 +1,25 @@
+# If running Mountain Lion (Mac OS 10.8) or later, install XQuartz.
+# http://www.xquartz.org/
+# tap the science formulae
+brew tap homebrew/science
+
+# install some Octave dependencies
+# the update/upgrade command below could take a while
+brew update && brew upgrade
+
+# install octave
+brew install octave --with-x11
+
+# install fltk for gnuplot
+brew install fltk # Not sure if this is necessary
+
+# install gnuplot (this may be installed as part of octave now)
+# homebrew/versions/gnuplot4. The latest version exports the graphs as black boxes
+brew install homebrew/versions/gnuplot4 --with-x11
+
+# Add this to the ~/.octaverc file
+#setenv ("GNUTERM", "x11")
+#PS1('>>');
+#graphics_toolkit gnuplot;
+#EDITOR('vim')
+#edit mode sync
